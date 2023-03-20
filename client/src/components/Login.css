@@ -1,0 +1,6 @@
+.login-page {
+    background-color: rgb(243, 245, 244);
+    display:flex;
+    align-items: center;
+    height:100vh;
+}
