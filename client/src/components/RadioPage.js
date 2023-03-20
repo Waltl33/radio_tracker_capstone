@@ -18,16 +18,16 @@ const [radios, setRadios] = useState([])
 const [deputies, setDeputies] = useState([])
 const [rentedRadios, setRentedRadios] = useState({})
 const [user, setUser] = useState(null)
-useEffect(()=> {
-  fetch('/authorized')
-  .then(res => {
-    if(res.ok){
-      res.json().then(user => setUser(user))
-    }else{
-      setUser(null)
-    }
-  })
-}, [])
+// useEffect(()=> {
+//   fetch('/authorized')
+//   .then(res => {
+//     if(res.ok){
+//       res.json().then(user => setUser(user))
+//     }else{
+//       setUser(null)
+//     }
+//   })
+// }, [])
 
 
 
@@ -42,11 +42,11 @@ useEffect(()=> {
   .then(resp => resp.json())
   .then(setDeputies)
 }, [])
-// useEffect(()=> {
-//   fetch("http://127.0.0.1:3000/rented_radios")
-//   .then(resp => resp.json())
-//   .then(setRentedRadios)
-// }, [])
+useEffect(()=> {
+  fetch("http://127.0.0.1:3000/rented_radios")
+  .then(resp => resp.json())
+  .then(setRentedRadios)
+}, [])
 
  const handleNewRadio =(myRadio) => {
   setRadios([myRadio, ...radios])
