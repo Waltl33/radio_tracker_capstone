@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { NavLink,Link, useNavigate} from "react-router-dom";
 import "./styles.css"
 
@@ -16,8 +17,8 @@ export default function NavBar(){
     })
   }
   return (
-  <nav className = "nav">
-    <Link to="/" className="site-title">
+ <nav className='nav'>
+     <Link to="/" className="site-title">
         Radio Tracker
       </Link>
     <li>
@@ -35,8 +36,9 @@ export default function NavBar(){
     <li>
       <NavLink to="/deputies/:id/edit">Edit Deputy</NavLink>
     </li>
-    <button onClick={handleLogout}>Logout</button>
-    </nav>
+    <Button variant="secondary" onClick={handleLogout}>Logout</Button>
+  </nav>
 
+    
   );
 }

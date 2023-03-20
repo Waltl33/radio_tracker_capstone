@@ -8,6 +8,7 @@ import {BrowserRouter as Router} from "react-router-dom"
 // import Userfront from "@userfront/core";
 import "../node_modules/react-bootstrap/dist/react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./components/styles.css"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
