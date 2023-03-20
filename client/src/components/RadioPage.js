@@ -18,16 +18,16 @@ const [radios, setRadios] = useState([])
 const [deputies, setDeputies] = useState([])
 const [rentedRadios, setRentedRadios] = useState({})
 const [user, setUser] = useState(null)
-// useEffect(()=> {
-//   fetch('/authorized')
-//   .then(res => {
-//     if(res.ok){
-//       res.json().then(user => setUser(user))
-//     }else{
-//       setUser(null)
-//     }
-//   })
-// }, [])
+useEffect(()=> {
+  fetch('/authorized')
+  .then(res => {
+    if(res.ok){
+      res.json().then(user => setUser(user))
+    }else{
+      setUser(null)
+    }
+  })
+}, [])
 
 
 
