@@ -1,9 +1,9 @@
 
 import React, {useEffect, useState} from 'react';
 import {radioService} from "../radioService";
-import {Container, Row, Col, Table} from "react-bootstrap";
+import {Container, Row, Col, Table, Button} from "react-bootstrap";
 
-function RadioList() {
+function RadioList({deputy}) {
 
   let [state , setState] = useState({
     radios : []
@@ -25,7 +25,7 @@ return (
         <Container className="mt-3">
             <Row>
                 <Col>
-                    <h3 className="text-primary">User List</h3>
+                    <h3 className="text-primary">Radio List</h3>
                     <p className="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consequatur deserunt ducimus inventore libero nam officia sit ullam. Ex ipsa nemo nesciunt odio odit quas rerum saepe veritatis vero voluptate!</p>
                 </Col>
             </Row>
@@ -48,7 +48,7 @@ return (
                                             
                                             <td>{radio.serial_number}</td>
                                             <td>{radio.model}</td>
-                                          
+                                            <button type="button" class="btn btn-outline-primary" onclick="location.href='#'">Edit</button> 
                                          
                                         </tr>
                                     )
