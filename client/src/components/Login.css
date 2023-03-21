@@ -1,6 +1,14 @@
-.login-page {
-    background-color: rgb(243, 245, 244);
-    display:flex;
-    align-items: center;
-    height:100vh;
+.masthead{
+    min-height: 100vh;
+    position: relative;
 }
+
+.color-overlay{
+    position:absolute;
+    background-color: rgba(0,0,0,0.2);
+    height: 100%;
+    width: 100%;
+    mix-blend-mode: normal;
+
+}
+

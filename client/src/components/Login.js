@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-
+import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -39,7 +39,6 @@ function handleSubmit (e){
 
   return (
 
-  
     <form onSubmit={handleSubmit}>
     {/* <!-- Email input --> */}
     <div class="form-outline mb-4">
@@ -54,7 +53,6 @@ function handleSubmit (e){
     </div>
   
  
-
     {/* <!-- Submit button --> */}
     <button type="button" onClick={handleSubmit} class="btn btn-primary btn-block mb-4">Sign in</button>
 {/*   

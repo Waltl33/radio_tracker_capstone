@@ -26,7 +26,7 @@ return (
             <Row>
                 <Col>
                     <h3 className="text-primary">Deputy List</h3>
-                    <p className="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consequatur deserunt ducimus inventore libero nam officia sit ullam. Ex ipsa nemo nesciunt odio odit quas rerum saepe veritatis vero voluptate!</p>
+                    
                 </Col>
             </Row>
             <Row>
