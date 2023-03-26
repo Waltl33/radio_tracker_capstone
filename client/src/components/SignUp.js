@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-
+import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 
 function Signup() {
   const [email, setEmail] = useState('');
@@ -39,54 +39,49 @@ function Signup() {
 
 
 
+ 
   return (
-
-  
-    <form onSubmit={handleSubmit}>
-
-{/* <!-- Name input --> */} 
-    <div class="form-outline mb-4">
-      <input type="name" id="form2Example2" class="form-control"value={name} onChange={(e) => setName(e.target.value)} />
-      <label class="form-label" for="form2Example2">Name</label>
-    </div>
-    {/* <!-- Email input --> */}
-    <div class="form-outline mb-4">
-      <input type="email" id="form2Example1" class="form-control" value={email} onChange={(e) => setEmail(e.target.value)}/>
-      <label class="form-label" for="form2Example1">Email address</label>
-    </div>
-{/*   
-    <!-- Password input --> */}
-    <div class="form-outline mb-4">
-      <input type="password" id="form2Example2" class="form-control"value={password} onChange={(e) => setPassword(e.target.value)} />
-      <label class="form-label" for="form2Example2">Password</label>
-    </div>
-  
-  
-
-    {/* <!-- Submit button --> */}
-    <button type="button" onClick={handleSubmit} class="btn btn-primary btn-block mb-4">Sign up</button>
-{/*   
-    <!-- Register buttons --> */}
-  {/* //   <div class="text-center">
-  //     <p>Not a member? <a href="#!">Register</a></p>
-  //     <p>or sign up with:</p>
-  //     <button type="button" class="btn btn-link btn-floating mx-1">
-  //       <i class="fab fa-facebook-f"></i>
-  //     </button>
-  
-  //     <button type="button" class="btn btn-link btn-floating mx-1">
-  //       <i class="fab fa-google"></i>
-  //     </button>
-  
-  //     <button type="button" class="btn btn-link btn-floating mx-1">
-  //       <i class="fab fa-twitter"></i>
-  //     </button>
-  
-  //     <button type="button" class="btn btn-link btn-floating mx-1">
-  //       <i class="fab fa-github"></i>
-  //     </button>
-  //   </div>
-  // </form> */}
-  </form>)
-}
+    <>
+        <Container className="mt-3">
+            <Row>
+                <Col md={3}>
+                    <Card className="shadow-lg">
+                        <Card.Header className="p-3" style={{backgroundColor: '#ffc107'}}>
+                            <h4>Register</h4>
+                        </Card.Header>
+                        <Card.Body style={{backgroundColor : '#f7f5f0'}}>
+                            <Form>
+                                <Form.Group className="mb-3">
+                                    <Form.Control
+                                        name="name"
+                                        value = {name}
+                                        onChange={(e) => setName(e.target.value)} 
+                                        type="text" placeholder="Username"/>
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Control
+                                        name="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        type="email" placeholder="Email"/>
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Control
+                                        name="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        type="password" placeholder="Password"/>
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Button onClick={handleSubmit} variant="warning" type="submit">Register</Button>
+                                </Form.Group>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container>
+    </>
+)
+};
 export default Signup;

@@ -2,8 +2,9 @@
 import React, {useEffect, useState} from 'react';
 import { deputyService } from "../deputyService";
 import {Container, Row, Col, Table} from "react-bootstrap";
+import DeputyListItems from './DeputyListItem';
 
-function DeputyList() {
+function DeputyList( handleDelete, handleEdit) {
 
   let [state , setState] = useState({
     deputies : []
@@ -52,7 +53,8 @@ return (
                                             <td>{deputy.last_name}</td>
                                             <td>{deputy.identification_number}</td>
                                             <td>{deputy.location}</td>
-                                          
+                                            <button onClick={handleDelete}>Delete</button>
+                                             <button onClick={handleEdit}>Edit Deputy</button>
                                          
                                         </tr>
                                     )
