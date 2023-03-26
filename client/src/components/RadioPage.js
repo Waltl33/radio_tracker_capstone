@@ -119,7 +119,7 @@ if(!user) return(
       deputy = {deputies}
       handleDeleteDeputy = {handleDeleteDeputy}
       updateDeputy = {updateDeputy}
-     
+      radios = {radios}
       />}/>
 
 <Route path= "/rented_radios" element ={

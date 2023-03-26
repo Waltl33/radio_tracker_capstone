@@ -1,71 +1,36 @@
+import React from "react";
+import DeputyListItem from "./DeputyListItem";
+import { Card } from "semantic-ui-react";
 
-import React, {useEffect, useState} from 'react';
-import { deputyService } from "../deputyService";
-import {Container, Row, Col, Table} from "react-bootstrap";
-import DeputyListItems from './DeputyListItem';
+function DeputyList({deputy, handleDeleteDeputy,updateDeputy }) {
 
-function DeputyList( handleDelete, handleEdit) {
 
-  let [state , setState] = useState({
-    deputies : []
-});
 
-useEffect(() => {
-    deputyService.getAllDeputies().then((response) => {
-        setState({
-            ...state,
-            deputies: response.data
-        })
-    }).catch((error) => {
-        console.log(error);
-    });
-}, [])
+  
+  // const deputyCards = deputy.map((deputy => (
+    // <DeputyListItem
+    //   key = {deputy.id}
+    //   deputy = {deputy}
+    //   handleDeleteDeputy={handleDeleteDeputy}
+    //   updateDeputy = {updateDeputy}
+    //  />
 
-return (
-    <>
-        <Container className="mt-3">
-            <Row>
-                <Col>
-                    <h3 className="text-primary">Deputy List</h3>
-                    
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <Table striped bordered hover className="shadow-lg text-center">
-                        <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>ID Number</th>
-                            <th>Location</th>
-                          
-                        </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                state.deputies.length > 0 &&
-                                state.deputies.map(deputy => {
-                                    return (
-                                        <tr key={deputy.id}>
-                                            
-                                            <td>{deputy.first_name}</td>
-                                            <td>{deputy.last_name}</td>
-                                            <td>{deputy.identification_number}</td>
-                                            <td>{deputy.location}</td>
-                                            <button onClick={handleDelete}>Delete</button>
-                                             <button onClick={handleEdit}>Edit Deputy</button>
-                                         
-                                        </tr>
-                                    )
-                                })
-                            }
-                        </tbody>
-                    </Table>
-                </Col>
-            </Row>
-        </Container>
-    </>
-)
-};
+  return (
+<Card.Group itemsPerRow={6}>
+{deputy.map(deputy => 
+(   <DeputyListItem
+  key = {deputy.id}
+  deputy = {deputy}
+  handleDeleteDeputy={handleDeleteDeputy}
+  updateDeputy = {updateDeputy}
+ />
+))
+}
+</Card.Group>
+    // <Card.Group itemsPerRow={6}>
+    //   <h1>{deputyCards}</h1>
+    // </Card.Group>
+  );
+}
+
 export default DeputyList;
