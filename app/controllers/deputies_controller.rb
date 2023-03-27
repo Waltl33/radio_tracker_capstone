@@ -1,7 +1,11 @@
 class DeputiesController < ApplicationController
     before_action :set_access_control_headers
     def index
-        render json:Deputy.all, status: :ok
+        @deputies = Deputy.all.includes(:radios) 
+        render json: @deputies
+  
+        
+
     end
     
     def show

@@ -10,4 +10,6 @@ post "/login", to: "sessions#create" #creates a new session
 post "/signup", to: "users#create"
 delete '/logout', to: 'sessions#destroy'
 get '/authorized', to: 'users#show'
+get '/courts', to:'courts#index'
+get '/jails', to: 'jails#index'
 end
