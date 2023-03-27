@@ -4,8 +4,8 @@ import { Form } from 'semantic-ui-react'
 function RadioForm({handleNewRadio}){
     const [model, setModel] = useState("")
     const [serial_number, setSerialNumber] = useState("")
-//   handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
+//  
+// handleSubmit for creating Radios
 const handleSubmit = (e) => {
     e.preventDefault()
     console.log(e)
@@ -25,8 +25,6 @@ const handleSubmit = (e) => {
     
     }
 
-//   render() {
-//     const { name, email } = this.state
 
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>

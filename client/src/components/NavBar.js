@@ -5,6 +5,7 @@ import "./styles.css"
 
 
 export default function NavBar(){
+  // logout 
   const navigate = useNavigate()
   const handleLogout = () => {
     fetch('/logout',{
@@ -17,6 +18,7 @@ export default function NavBar(){
     })
   }
   return (
+    
  <nav className='nav'>
      <Link to="/" className="site-title">
         Radio Tracker

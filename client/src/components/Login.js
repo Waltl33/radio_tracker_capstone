@@ -6,7 +6,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   let navigate = useNavigate()
-  
+//   Submit for login
 function handleSubmit (e){
     e.preventDefault();
     const user = {

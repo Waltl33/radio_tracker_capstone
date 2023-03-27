@@ -4,11 +4,11 @@ import { Card } from "semantic-ui-react";
 
 function RadioList({radio, updateRadioButton}) {
 
-  const cards = radio.map((radio => (
-    <RadioListItems
-      key = {radio.id}
-      radio = {radio}/>
-  )))
+  // const cards = radio.map((radio => (
+  //   <RadioListItems
+  //     key = {radio.id}
+  //     radio = {radio}/>
+  // )))
   return (
     <Card.Group itemsPerRow={4}>
     {radio.map(radio => 

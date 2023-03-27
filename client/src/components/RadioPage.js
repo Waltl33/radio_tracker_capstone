@@ -20,6 +20,7 @@ const [deputies, setDeputies] = useState([])
 const [rentedRadios, setRentedRadios] = useState({})
 const [courts, setCourts] = useState({})
 const [user, setUser] = useState(null)
+// authorizes users
 useEffect(()=> {
   fetch('/authorized')
   .then(res => {
@@ -50,27 +51,29 @@ useEffect(()=> {
   .then(setDeputies)
 }, [])
 
+// function to update new radios on create
  const handleNewRadio =(myRadio) => {
   setRadios([myRadio, ...radios])
  }
+// function to update new deputies on create
  const handleNewDeputy =(myDeputy) => {
   setDeputies([myDeputy, ...radios])
  }
 
 
- 
+// function to delete deputies
 function handleDeleteDeputy(deputytoDelete){
 const updateDeputy = deputies.filter((deputy) => deputy.id !== deputytoDelete.id)
  setDeputies(updateDeputy)
 }
 
-
+// 
 function updateRadioButton(updateRadioList){
   const filteredRentedRadios = rentedRadios.filter(radio => radio.id !== rentedRadios.id)
   
   setRadios(updateRadioList)
 }
-
+// function to edit deputies on Post
 const updateDeputy = (updatedDeputy) => setDeputies(current => {
   return current.map(deputy => {
    if(deputy.id === updatedDeputy.id){
@@ -91,7 +94,8 @@ if(!user) return(
   
     
    <>
-   <NavBar/>
+ <NavBar/>
+  {/* path to radios */}
   <Routes>
   <Route path="/" element={
       <RadioList 
@@ -99,18 +103,19 @@ if(!user) return(
       updateRadioButton = {updateRadioButton}
      /> }/>
 
-    
+    {/* path to create radios */}
      <Route path= "/radios/new" element={
       <RadioForm 
       handleNewRadio = {handleNewRadio}
       />}/>
     
       
-
+      {/* path to create deputies */}
     <Route path= "/deputies/new" element= {
       <DeputyForm
       handleNewDeputy = {handleNewDeputy}
       />}/>
+      {/* path edit deputies */}
  <Route path= "/deputies/:id/edit" element ={
       <EditDeputyForm
       // deputy = {deputies}
@@ -123,7 +128,7 @@ if(!user) return(
       <RadioListItems
       // deleteDeputy = {deleteDeputy}
       />}/>
-
+  {/* path to see all deputies */}
     <Route path= "/deputies" element ={
       <DeputyList
       deputy = {deputies}
@@ -131,17 +136,14 @@ if(!user) return(
       updateDeputy = {updateDeputy}
       radios = {radios}
       />}/>
+    {/* path to see all radios in the courts location */}
     <Route path= "/courts" element ={
       <CourtsList
       deputy = {deputies}
     
       radios = {radios}
       />}/>
-<Route path= "/rented_radios" element ={
-      <RentedRadioList
-      rentedRadios= {rentedRadios}
-   
-      />}/>
+    {/* path to see all radios in teh jails location */}
      <Route path= "/jails" element ={
       <JailList
       deputy = {deputies}
@@ -149,10 +151,11 @@ if(!user) return(
       // updateDeputy = {updateDeputy}
       radios = {radios}
       />}/>
+      {/* path to login */}
   <Route path = "/login" element={
     <Login
    />} />
-
+    {/* path to signup */}
 <Route path = "/signup" element={
     <Signup
    />} />
