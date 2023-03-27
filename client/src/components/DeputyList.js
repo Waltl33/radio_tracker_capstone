@@ -6,14 +6,7 @@ function DeputyList({deputy, handleDeleteDeputy,updateDeputy }) {
 
 
 
-  
-  // const deputyCards = deputy.map((deputy => (
-    // <DeputyListItem
-    //   key = {deputy.id}
-    //   deputy = {deputy}
-    //   handleDeleteDeputy={handleDeleteDeputy}
-    //   updateDeputy = {updateDeputy}
-    //  />
+ 
 
   return (
 <Card.Group itemsPerRow={6}>

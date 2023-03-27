@@ -38,16 +38,21 @@ const handleEdit = (e) => {
   
   }
   
+  const serialNumber =  deputy.radios.map(radio =>(radio.serial_number))
+
+  console.log(deputy.radios)
   return (
 
     <Card>
-      <div>     
+      <div>   
+      <div className="ID"> Issue ID {id}</div>   
       <div className="First Name"> First Name: {first_name}</div>
       <div className="Last Name">  Last Name: {last_name}</div>
-      <div className="Identification Number"> Id: {identification_number}</div>
-      <div className="resign"> Resign: {resign}</div>
-      <div className="location"> Location: {location}</div>
-      <div className="location"> Serial Number:</div>
+    
+      <div className="resign"> Serial Number: {serialNumber}</div> 
+      
+      
+       
       <Button onClick={handleDelete}>Delete</Button>
       <Button onClick={handleEdit}>Edit Deputy</Button>
       </div>

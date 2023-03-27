@@ -23,7 +23,7 @@ function handleSubmit (e){
       .then(res => {
           if(res.ok){
               res.json().then(user => {
-              navigate(`/`)
+              navigate(`/radios`)
               })
           }else{
               res.json().then(json => (json.error))

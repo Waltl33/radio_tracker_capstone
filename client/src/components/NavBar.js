@@ -36,6 +36,12 @@ export default function NavBar(){
     <li>
       <NavLink to="/deputies/:id/edit">Edit Deputy</NavLink>
     </li>
+    <li>
+      <NavLink to="/courts">Courts</NavLink>
+    </li>
+    <li>
+      <NavLink to="/jails">Jail</NavLink>
+    </li>
     <Button variant="secondary" onClick={handleLogout}>Logout</Button>
   </nav>
 

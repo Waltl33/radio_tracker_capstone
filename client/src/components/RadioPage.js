@@ -11,12 +11,14 @@ import RentedRadioList from "./RentedRadioList";
 import Signup from "./SignUp";
 import EditDeputyForm from "./EditDeputyForm"
 import RadioListItems from "./DeputyListItem";
-
+import CourtsList from  "./CourtsList"
+import JailList from "./JailList";
 function RadioPage() {
 
 const [radios, setRadios] = useState([])
 const [deputies, setDeputies] = useState([])
 const [rentedRadios, setRentedRadios] = useState({})
+const [courts, setCourts] = useState({})
 const [user, setUser] = useState(null)
 useEffect(()=> {
   fetch('/authorized')
@@ -36,16 +38,16 @@ useEffect(()=> {
     .then(resp => resp.json())
     .then(setRadios)
  }, [])
-
+ useEffect(()=> {
+   fetch("http://127.0.0.1:3000/rented_radios")
+   .then(resp => resp.json())
+   .then(setRentedRadios)
+ }, [])
+ 
  useEffect(()=> {
   fetch("http://127.0.0.1:3000/deputies")
   .then(resp => resp.json())
   .then(setDeputies)
-}, [])
-useEffect(()=> {
-  fetch("http://127.0.0.1:3000/rented_radios")
-  .then(resp => resp.json())
-  .then(setRentedRadios)
 }, [])
 
  const handleNewRadio =(myRadio) => {
@@ -60,6 +62,13 @@ useEffect(()=> {
 function handleDeleteDeputy(deputytoDelete){
 const updateDeputy = deputies.filter((deputy) => deputy.id !== deputytoDelete.id)
  setDeputies(updateDeputy)
+}
+
+
+function updateRadioButton(updateRadioList){
+  const filteredRentedRadios = rentedRadios.filter(radio => radio.id !== rentedRadios.id)
+  
+  setRadios(updateRadioList)
 }
 
 const updateDeputy = (updatedDeputy) => setDeputies(current => {
@@ -87,6 +96,7 @@ if(!user) return(
   <Route path="/" element={
       <RadioList 
       radio = {radios} 
+      updateRadioButton = {updateRadioButton}
      /> }/>
 
     
@@ -121,13 +131,24 @@ if(!user) return(
       updateDeputy = {updateDeputy}
       radios = {radios}
       />}/>
-
+    <Route path= "/courts" element ={
+      <CourtsList
+      deputy = {deputies}
+    
+      radios = {radios}
+      />}/>
 <Route path= "/rented_radios" element ={
       <RentedRadioList
       rentedRadios= {rentedRadios}
    
       />}/>
- 
+     <Route path= "/jails" element ={
+      <JailList
+      deputy = {deputies}
+      // handleDeleteDeputy = {handleDeleteDeputy}
+      // updateDeputy = {updateDeputy}
+      radios = {radios}
+      />}/>
   <Route path = "/login" element={
     <Login
    />} />
