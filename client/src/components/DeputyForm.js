@@ -39,8 +39,8 @@ const handleSubmit = (e) => {
 
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>
-        <Form.Group>
-          <Form.Input
+        <Form.Group >
+          <Form.Input width = {6}
             placeholder='First Name'
             name='First Name'
             value={first_name}

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Card } from "semantic-ui-react";
+import { Card, Button, Container, Divider} from "semantic-ui-react";
 
 function RadioListItems({radio, updateRadioButton}) {
   const [isRented, setRented] = useState(false);
@@ -21,7 +21,12 @@ function RadioListItems({radio, updateRadioButton}) {
 // console.log(radio.deputies)
   return ( 
  
-    <Card>
+    
+   
+    
+    
+     
+    <Card color = "black">
       <div>  
       <div className="id"> Issue ID: {radio.id}</div>   
       <div className="serial number"> Serial Number: {radio.serial_number}</div>
@@ -29,9 +34,10 @@ function RadioListItems({radio, updateRadioButton}) {
       <span>
      
      <i className="model number" /> Model Number: {radio.model} </span>
-     <button onClick={handleClick}> {radio.deputies.length !== 0 ? "Rented" : "Not Rented"}</button>
+     <Button compact size="tiny" color="blue"onClick={handleClick}> {radio.deputies.length !== 0 ? "Rented" : "Not Rented"}</Button>
       </div>
     </Card>
+   
   );
 }
 

@@ -9,7 +9,7 @@ function DeputyList({deputy, handleDeleteDeputy,updateDeputy }) {
  
 
   return (
-<Card.Group itemsPerRow={6}>
+<Card.Group centered items={6}>
 {deputy.map(deputy => 
 (   <DeputyListItem
   key = {deputy.id}

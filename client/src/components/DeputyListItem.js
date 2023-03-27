@@ -53,8 +53,8 @@ const handleEdit = (e) => {
       
       
        
-      <Button onClick={handleDelete}>Delete</Button>
-      <Button onClick={handleEdit}>Edit Deputy</Button>
+      <Button compact size = "mini" color="blue" onClick={handleDelete}>Delete</Button>
+      <Button compact size = "mini"  color = "black" onClick={handleEdit}>Edit Deputy</Button>
       </div>
     </Card>
   );

@@ -10,7 +10,7 @@ function RadioList({radio, updateRadioButton}) {
   //     radio = {radio}/>
   // )))
   return (
-    <Card.Group itemsPerRow={4}>
+    <Card.Group centered items={radio}>
     {radio.map(radio => 
     (   <RadioListItems
       key = {radio.id}

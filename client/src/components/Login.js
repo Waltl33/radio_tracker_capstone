@@ -39,7 +39,7 @@ function handleSubmit (e){
 
   return (
 
-    <>
+    <div className="d-flex justify-content-center align-items-center" style={{height: '50vh'}}>
         <Container className="mt-3">
             <Row>
                 <Col md={3}>
@@ -73,7 +73,7 @@ function handleSubmit (e){
                 </Col>
             </Row>
         </Container>
-    </>
+    </div>
 )
 };
 export default Login;

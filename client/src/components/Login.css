@@ -1,14 +1,9 @@
-.masthead{
-    min-height: 100vh;
-    position: relative;
-}
-
-.color-overlay{
-    position:absolute;
-    background-color: rgba(0,0,0,0.2);
-    height: 100%;
-    width: 100%;
-    mix-blend-mode: normal;
-
-}
-
+.d-flex {
+    display: flex!important;
+    height: 100vh;
+  }
+  
+  .center {
+    margin: 0 auto;
+    align-self: center;
+  }

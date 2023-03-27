@@ -11,13 +11,13 @@ const {id, first_name, last_name, identification_number, resign, location} = dep
 const serialNumber =  deputy.radios.map(radio =>(radio.serial_number))
   return (
 
-    <Card>
+    <Card fluid color='red' header='Option 1'>
       <div>   
      
       <div className="First Name"> First Name: {first_name}</div>
       <div className="Last Name">  Last Name: {last_name}</div>
-      <div className="Identification Number"> DID: {identification_number}</div>
-      <div className="location"> Location: {location}</div>
+     
+      <div className="location" > Location: {location}</div>
       <div className="serial number"> Serial Number: {serialNumber}</div>
  
       </div>
