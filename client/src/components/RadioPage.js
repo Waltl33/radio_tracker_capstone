@@ -118,7 +118,7 @@ if(!user) return(
       {/* path edit deputies */}
  <Route path= "/deputies/:id/edit" element ={
       <EditDeputyForm
-      deputy = {deputies}
+      // deputy = {deputies}
       // updatedDeputy = {updatedDeputy}
       // deputy={deputy}
       updateDeputy = {updateDeputy}
