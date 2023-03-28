@@ -35,9 +35,9 @@ export default function NavBar(){
     <li>
       <NavLink to="/deputies">Deputy List</NavLink>
     </li>
-    <li>
+    {/* <li>
       <NavLink to="/deputies/:id/edit">Edit Deputy</NavLink>
-    </li>
+    </li> */}
     <li>
       <NavLink to="/courts">Courts</NavLink>
     </li>

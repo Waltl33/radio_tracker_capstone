@@ -31,7 +31,7 @@ class DeputiesController < ApplicationController
     private
     
     def deputy_params
-        params.permit(:first_name, :last_name, :identification_number, :resign, :location,)
+        params.permit(:id, :first_name, :last_name, :identification_number, :resign, :location,)
     end
     def set_access_control_headers
         headers['Access-Control-Allow-Origin'] = 'http://localhost:4000'

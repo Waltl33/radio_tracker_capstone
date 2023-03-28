@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Form } from 'semantic-ui-react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 function EditDeputyForm({updateDeputy, deputy}){
     const [first_name, setFirstName] = useState("")
@@ -8,7 +8,7 @@ function EditDeputyForm({updateDeputy, deputy}){
     const [identification_number, setIdentificationNumber] = useState("")
     const [resign, setResign] = useState("")
     const [location, setLocation] = useState("")
-   console.log(deputy)
+  let navigate = useNavigate()
 //   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 // const[formData, setFormData] = useState({
 //     first_name: '',
@@ -32,20 +32,43 @@ useEffect(() => {
     .then(user)
   },[])
 
-
-const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    fetch(`/deputies/${id}`, {
+      method: "PATCH",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(user)
+    })
+    .then(resp => {
+      if (resp.ok) {
+        return resp.json();
+      } else {
+        throw new Error("Network response was not ok.");
+      }
+    })
+    .then(myDeputy => {
+      updateDeputy(myDeputy);
+      navigate(`/deputies`);
+    })
+    .catch(error => {
+      console.error("Error updating deputy:", error);
+      // Add appropriate error handling here, e.g. display a message to the user
+    });
+  }
+// const handleSubmit = (e) => {
+//     e.preventDefault()
    
-       fetch(`/deputies/${id}`, {
-        method: "PATCH",
-        headers: {"Content-Type": "application/json"
-      },
-        body: JSON.stringify(user)
-      })
-        .then(resp => resp.json())
-        .then(myDeputy => updateDeputy(myDeputy))
+//        fetch(`/deputies/${id}`, {
+//         method: "PATCH",
+//         headers: {"Content-Type": "application/json"
+//       },
+//         body: JSON.stringify(user)
+//       })
+//         .then(resp => resp.json())
+//         .then(myDeputy => updateDeputy(myDeputy))
     
-    }
+//     }
 
 console.log(id)
     return (
