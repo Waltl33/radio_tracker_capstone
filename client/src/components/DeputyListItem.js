@@ -26,21 +26,28 @@ const {id, first_name, last_name, identification_number, resign, location} = dep
 
 const handleEdit = (e) => {
   e.preventDefault()
- 
+ console.log(id)
      fetch(`/deputies/${id}`, {
       method: "PATCH",
       headers: {"Content-Type": "application/json"
     },
       body: JSON.stringify(deputy)
     })
-      .then(resp => resp.json())
-      .then(myDeputy => updateDeputy(myDeputy))
-  
-  }
-  
+    .then(res => {
+      if (res.ok) {
+        res.json().then(() => {
+          navigate(`/deputies/${id}/edit`);
+        });
+      } else {
+        res.json().then(json => {
+          console.log(json.error);
+        });
+      }
+    });
+}
   const serialNumber =  deputy.radios.map(radio =>(radio.serial_number))
 
-  console.log(deputy.radios)
+ 
   return (
 
     <Card>
