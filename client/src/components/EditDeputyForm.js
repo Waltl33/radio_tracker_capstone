@@ -47,7 +47,7 @@ const handleSubmit = (e) => {
         .then(myDeputy => updateDeputy(myDeputy))
     
     }
-console.log({id})
+
 
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>
