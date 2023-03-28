@@ -3,11 +3,12 @@ import { Form } from 'semantic-ui-react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 function EditDeputyForm({updateDeputy, deputy}){
-    const [first_name, setFirstName] = useState("")
+  
+    const [first_name, setFirstName] = useState(deputy.first_name || "")
     const [last_name, setLastName] = useState("")
     const [identification_number, setIdentificationNumber] = useState("")
     const [resign, setResign] = useState("")
-    const [location, setLocation] = useState("")
+    const [location, setLocation] = useState()
   let navigate = useNavigate()
 //   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 // const[formData, setFormData] = useState({
@@ -17,6 +18,7 @@ function EditDeputyForm({updateDeputy, deputy}){
 //     resign: '',
 //     location: ''
 // })
+
 let user = {
     first_name,
     last_name,
@@ -56,6 +58,7 @@ useEffect(() => {
       // Add appropriate error handling here, e.g. display a message to the user
     });
   }
+ 
 // const handleSubmit = (e) => {
 //     e.preventDefault()
    
@@ -70,7 +73,7 @@ useEffect(() => {
     
 //     }
 
-console.log(id)
+// console.log(id)
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>
         <Form.Group>
@@ -80,6 +83,7 @@ console.log(id)
             name='First Name'
             value={first_name}
             onChange={(e) => setFirstName(e.target.value)}
+           
           />
           <Form.Input
             placeholder='Last Name'

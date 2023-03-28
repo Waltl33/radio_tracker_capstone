@@ -29,8 +29,8 @@ function RadioListItems({radio, updateRadioButton}) {
     <Card color = "black">
       <div>  
       <div className="id"> Issue ID: {radio.id}</div>   
-      <div className="serial number"> Serial Number: {radio.serial_number}</div>
-      <div className="assigned"> Assigned to: {radio.deputies.length === 0 ? "none" : `${deputyFirstName} ${deputyLastName}`} </div>  
+      <div className="serial number" style={{color: "red"}}> Serial Number: {radio.serial_number}</div>
+      <div className="assigned"> Assigned to: {radio.deputies.length === 0 ? "None" : `${deputyFirstName} ${deputyLastName}`} </div>  
       <span>
      
      <i className="model number" /> Model Number: {radio.model} </span>

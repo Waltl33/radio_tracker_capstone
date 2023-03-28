@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 
 function Login() {
@@ -67,6 +67,7 @@ function handleSubmit(e) {
                                         onChange={(e) => setPassword(e.target.value)}
                                         type="password" placeholder="Password"/>
                                 </Form.Group>
+                                <p>Don't have an account? <Link to= "/signup">Sign up here</Link></p>
                                 <Form.Group className="mb-3">
                                     <Button onClick={handleSubmit} variant="warning" type="submit">Login</Button>
                                 </Form.Group>

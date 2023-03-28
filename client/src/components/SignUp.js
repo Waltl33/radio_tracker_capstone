@@ -56,7 +56,7 @@ function Signup() {
                                         name="name"
                                         value = {name}
                                         onChange={(e) => setName(e.target.value)} 
-                                        type="text" placeholder="Username"/>
+                                        type="text" placeholder="Name"/>
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Control
