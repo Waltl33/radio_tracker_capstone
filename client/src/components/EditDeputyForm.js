@@ -3,12 +3,13 @@ import { Form } from 'semantic-ui-react'
 import { useParams, useNavigate } from 'react-router-dom'
 
 function EditDeputyForm({updateDeputy, deputy}){
-  
+
     const [first_name, setFirstName] = useState(deputy.first_name || "")
     const [last_name, setLastName] = useState("")
     const [identification_number, setIdentificationNumber] = useState("")
     const [resign, setResign] = useState("")
     const [location, setLocation] = useState()
+    const [errors, setErrors] = useState([])
   let navigate = useNavigate()
 //   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 // const[formData, setFormData] = useState({
@@ -20,9 +21,9 @@ function EditDeputyForm({updateDeputy, deputy}){
 // })
 
 let user = {
-    first_name,
-    last_name,
-    identification_number,
+    first_name: deputy.first_name,
+    last_name: deputy.last_name,
+    identification_number: deputy.identification_number,
     resign,
     location
 }
@@ -74,11 +75,12 @@ useEffect(() => {
 //     }
 
 // console.log(id)
+<h1>(errors)</h1>
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>
         <Form.Group>
    
-          <Form.Input
+          {/* <Form.Input
             placeholder='First Name'
             name='First Name'
             value={first_name}
@@ -102,7 +104,7 @@ useEffect(() => {
             name='Resign'
             value={resign}
             onChange={(e) => setResign(e.target.value)}
-          />
+          /> */}
             <Form.Input
             placeholder='Location'
             name='Location'

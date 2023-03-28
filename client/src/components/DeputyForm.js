@@ -12,6 +12,7 @@ function DeputyForm({handleNewDeputy}){
     const [identification_number, setIdentificationNumber] = useState("")
     const [resign, setResign] = useState("")
     const [location, setLocation] = useState("")
+    const [errors, setErrors] = ([])
 //   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 let navigate = useNavigate()
 const handleSubmit = (e) => {
@@ -31,12 +32,19 @@ const handleSubmit = (e) => {
       },
         body: JSON.stringify(newDeputy)
       })
-      .then((r) => {
-        r.json()
-        navigate("/deputies")
-          })
+      .then(res => {
+        if (res.ok) {
+          res.json().then(() => {
+            navigate(`/deputies`);
+          });
+        } else {
+          res.json().then(data => {
+            setErrors(data.error);
+          });
         }
-      
+      });
+  }
+     
         // .then(resp => resp.json())
         // .then(deputy => handleNewDeputy(deputy))
     

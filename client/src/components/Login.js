@@ -5,6 +5,7 @@ import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState("")
   let navigate = useNavigate()
 //   Submit for login
 function handleSubmit(e) {
@@ -27,16 +28,16 @@ function handleSubmit(e) {
             navigate(`/`);
           });
         } else {
-          res.json().then(json => {
-            console.log(json.error);
+          res.json().then(setErrors)
+        }
           });
         }
-      });
-  }
+      
+  
+        console.log(errors)
      
+  if(errors) <h2>{errors}</h2>
   
-  
-
 
 
   return (

@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Form } from 'semantic-ui-react'
 
 function RadioForm({handleNewRadio}){
     const [model, setModel] = useState("")
     const [serial_number, setSerialNumber] = useState("")
-//  
+    
+let navigate = useNavigate()
 // handleSubmit for creating Radios
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -20,11 +22,22 @@ const handleSubmit = (e) => {
       },
         body: JSON.stringify(newRadio)
       })
-        .then(resp => resp.json())
-        .then(myRadio => handleNewRadio(myRadio))
-    
-    }
-
+     .then(resp => {
+      if (resp.ok) {
+        return resp.json();
+      } else {
+        throw new Error("Network response was not ok.");
+      }
+    })
+    .then(myRadio=> {
+      handleNewRadio(myRadio);
+      navigate(`/`);
+    })
+    .catch(error => {
+      console.error("Error updating deputy:", error);
+      // Add appropriate error handling here, e.g. display a message to the user
+    });
+  }
 
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>

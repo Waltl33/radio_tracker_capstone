@@ -55,13 +55,13 @@ const handleEdit = (e) => {
       <div className="ID"> Issue ID {id}</div>   
       <div className="First Name"> First Name: {first_name}</div>
       <div className="Last Name">  Last Name: {last_name}</div>
-    
       <div className="resign"> Serial Number: {serialNumber}</div> 
+      <div className="location"> Location: {location}</div> 
       
       
        
-      <Button compact size = "mini" color="blue" onClick={handleDelete}>Delete</Button>
-      <Button compact size = "mini"  color = "black" onClick={handleEdit}>Edit Deputy</Button>
+      <Button compact size = "mini" color="blue" onClick={handleDelete}>Delete Deputy</Button>
+      <Button compact size = "mini"  color = "black" onClick={handleEdit}>Edit Location</Button>
       </div>
     </Card>
   );
