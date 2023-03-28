@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form } from 'semantic-ui-react'
 import { useParams } from 'react-router-dom'
 
-function EditDeputyForm({updateDeputy}){
+function EditDeputyForm({updateDeputy,deputy} ){
     const [first_name, setFirstName] = useState("")
     const [last_name, setLastName] = useState("")
     const [identification_number, setIdentificationNumber] = useState("")
@@ -18,19 +18,20 @@ function EditDeputyForm({updateDeputy}){
 //     location: ''
 // })
 let user = {
-    first_name,
-    last_name,
-    identification_number,
-    resign,
-    location
+  first_name,
+  last_name,
+  identification_number,
+  resign,
+  location
 }
+
 
 const {id} = useParams()
 useEffect(() => {
-    fetch(`/deputies/${id}`)
-    .then(res => res.json())
-    .then(user)
-  },[])
+  fetch(`/deputies/${id}`)
+  .then(res => res.json())
+  .then(user)
+},[])
 
 
 const handleSubmit = (e) => {
@@ -46,7 +47,7 @@ const handleSubmit = (e) => {
         .then(myDeputy => updateDeputy(myDeputy))
     
     }
-
+console.log({id})
 
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>

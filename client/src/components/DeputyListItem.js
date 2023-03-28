@@ -40,7 +40,7 @@ const handleEdit = (e) => {
   
   const serialNumber =  deputy.radios.map(radio =>(radio.serial_number))
 
-  console.log(deputy.radios)
+  
   return (
 
     <Card>
