@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Form } from 'semantic-ui-react'
 
 
@@ -12,7 +13,7 @@ function DeputyForm({handleNewDeputy}){
     const [resign, setResign] = useState("")
     const [location, setLocation] = useState("")
 //   handleChange = (e, { name, value }) => this.setState({ [name]: value })
-
+let navigate = useNavigate()
 const handleSubmit = (e) => {
     e.preventDefault()
     console.log(e)
@@ -30,10 +31,16 @@ const handleSubmit = (e) => {
       },
         body: JSON.stringify(newDeputy)
       })
-        .then(resp => resp.json())
-        .then(deputy => handleNewDeputy(deputy))
+      .then((r) => {
+        r.json()
+        navigate("/deputies")
+          })
+        }
+      
+        // .then(resp => resp.json())
+        // .then(deputy => handleNewDeputy(deputy))
     
-    }
+    
 
 
 

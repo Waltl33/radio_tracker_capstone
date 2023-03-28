@@ -7,30 +7,32 @@ function Login() {
   const [password, setPassword] = useState('');
   let navigate = useNavigate()
 //   Submit for login
-function handleSubmit (e){
+function handleSubmit(e) {
     e.preventDefault();
     const user = {
       email,
       password
     }
   
-   
-      fetch('/login',{
-          method: 'POST',
-          headers:{'Content-Type': 'application/json'},
-          body:JSON.stringify(user)
-      })
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
       .then(res => {
-          if(res.ok){
-              res.json().then(user => {
-              navigate(`/radios`)
-              })
-          }else{
-              res.json().then(json => (json.error))
-          }
-          })
-  
-    }
+        if (res.ok) {
+          res.json().then(() => {
+            navigate(`/`);
+          });
+        } else {
+          res.json().then(json => {
+            console.log(json.error);
+          });
+        }
+      });
+  }
      
   
   
@@ -39,7 +41,8 @@ function handleSubmit (e){
 
   return (
 
-    <div className="d-flex justify-content-center align-items-center" style={{height: '50vh'}}>
+    <div className="row">
+        <div class="mx-auto col-10 col-md-8 col-lg-6"></div>
         <Container className="mt-3">
             <Row>
                 <Col md={3}>
