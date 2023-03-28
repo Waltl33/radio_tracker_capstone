@@ -2,7 +2,7 @@ class CourtsController < ApplicationController
     before_action :set_access_control_headers
     def index
       
-     render json: Deputy.where({location: "Courts"})
+     render json: Deputy.where({location: "Courts"}).order(last_name: :asc)
   
         
 

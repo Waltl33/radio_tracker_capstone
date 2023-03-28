@@ -26,7 +26,17 @@ Radio.create!(serial_number: "481CSM4122", model: "APX6500", rented: true )
 Radio.create!(serial_number: "481CSM5233", model: "APX6500", rented: true )
 Radio.create!(serial_number: "481CSM9875", model: "APX6500", rented: true )
 Radio.create!(serial_number: "481CSM5464", model: "APX6500", rented: true )
-
+Radio.create!(serial_number: "481CSM7895", model: "APX6000", rented: true )
+Radio.create!(serial_number: "481CSM3656", model: "APX6000", rented: true )
+Radio.create!(serial_number: "481CSM2567", model: "APX6000", rented: true )
+Radio.create!(serial_number: "481CSM1566", model: "APX6000", rented: true )
+Radio.create!(serial_number: "481CSM1291", model: "APX6000", rented: true )
+Radio.create!(serial_number: "481CSM2514", model: "APX6000", rented: true )
+Radio.create!(serial_number: "481CSM3698", model: "APX6000", rented: true )
+Radio.create!(serial_number: "481CSM4129", model: "APX6500", rented: true )
+Radio.create!(serial_number: "481CSM5231", model: "APX6500", rented: true )
+Radio.create!(serial_number: "481CSM9811", model: "APX6500", rented: true )
+Radio.create!(serial_number: "481CSM5765", model: "APX6500", rented: true )
 
 5.times do
     Deputy.create!(
@@ -70,7 +80,7 @@ end
     )
 end
 
-10.times do
+15.times do
     RentedRadio.create!(
         deputy_id: Deputy.all().sample().id,
         radio_id: Radio.all().sample().id,

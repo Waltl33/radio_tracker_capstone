@@ -2,7 +2,7 @@ class JailsController < ApplicationController
     before_action :set_access_control_headers
     def index
       
-        render json: Deputy.where({location: "Jail"})
+        render json: Deputy.where({location: "Jail"}).order(last_name: :asc)
      
            
    
