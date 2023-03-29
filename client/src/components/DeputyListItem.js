@@ -2,7 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Button, Radio } from "semantic-ui-react";
-import { radioService } from "../radioService";
+// import { radioService } from "../radioService";
 
 function DeputyListItems({deputy, handleDeleteDeputy,updateDeputy, radios}) {
 const navigate = useNavigate()

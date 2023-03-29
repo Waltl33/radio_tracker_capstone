@@ -2,7 +2,7 @@
 import React from "react";
 
 import { Card, Button, Radio } from "semantic-ui-react";
-import { radioService } from "../radioService";
+// import { radioService } from "../radioService";
 
 function CourtsListItems({deputy}) {
 

@@ -4,10 +4,9 @@ This app was inspired and created out of a need a to radio technician keep track
 In this app the user will be ablt to 
 * Signup with a profile
 * View all the radios
-* Rent radio's to Deputies
-* Edit the Deputies and radio's location
-* Delete the Deputies
-* Edit their reviews
+* Edit the Deputy's  location
+* Delete the Deputy
+* Update the Deputy's location
 
 ## Technologies
 
@@ -45,7 +44,7 @@ rails server
 
 ## How Radio Tracker works
 
-When the user first goes get logged in they will be able to see a list of all radios.  From that list the user will be able to assign a radio to a Deputy. Once that radio is assigned to the Deputy it will be attached to the Deputy.  If the Deputies starting location is ever change the user will be able to edit the Deputies status change to the new location which will transfer the Deputy and radio.  Upon the a Deputy returning the radio the Deputy will be removed the system and the radio will be removed from the assigned radio location.
+When the user first goes get logged in they will be able to see a list of all radios, and be able to see if the radio is rented or not rented.  You will be able to see which Deputy has rented the radio, and be able to create a radio and also create a Deputy.  If the Deputy is attached to a radio you will be able to edit the work location of the Deputy and the attached radio will follow.  Also there are 2 locations, jail and courts, which will only show the deputies assigned to those locations.  There also functionality to delete the Deputy in which his rented radio will be deleted with him.
 
 ### ```Login.js```
 
@@ -53,29 +52,54 @@ The Login component includes a form to enter the user's username and password.  
 
 ### ```Signup.js```
 
-The Signup component includes a form with all of the signup fields, including name, username, email, password.  When the form is submitted,it is checked if all the validations are passed and then POST to localhost:3000/users database.  If the validations aren't passed, an alert would let the user know that it isn't a valid SignUp.  Once a successful signup form is submitted, the user is redirected to HomeList.js.
+The Signup component includes a form with all of the signup fields, including name,  email, password.  When the form is submitted,it is checked if all the validations are passed and then POST to localhost:3000/users database.  If the validations aren't passed, an alert would let the user know that it isn't a valid SignUp.  Once a successful signup form is submitted, the user is redirected to HomeList.js.
+
+### '```RadioPage.js```
+This component is the top level component of the page
+
+
+### ```RadioListItems.js```
+
+Html and code for the radios
 
 ### ```RadioList.js```
 
-This component will serve as the main inventory list where a user can see all of the radios.
-### ```SingleRadio.js```
-
-This will let the user pull up a single radio and its details.
-### ```RentedRadio.js```
-
-This component will show a Deputies and the radios that they rented
+The page that displays the radio data to the page.
 
 
-### ```Locations.js```
-
-User will be able to pull up a list of rented radio's by location
-
-
-### ```SingleRentedRadios.js```
-
-User will be able to pull up a single rented radio
+### ```RadioForm.js```
+The form to create a radio
 
 
+### ```DeputyListItem.js```
+
+Html and code for the deputies
+
+
+### ```DeputyList.js```
+
+Render the Deputy informatin to the page 
+
+
+### ```DeputyForm.js```
+
+code to create a new Deputy
+
+### ```EditDeputyForm.js```
+
+Form created to edit the location of the Deputy 
+
+### ```CourtListItems.js```
+
+Html and code to display only deputies and radios with a courts location 
+
+### ```CourtsList.js```
+
+Displays the courts list to the page 
+
+### ```JailListItems.js```
+
+Html and code to display only deputies and radios with the jails location 
 
 ### ```NavBar.js```
 
