@@ -55,37 +55,27 @@ const handleSubmit = (e) => {
     return (
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>
         <Form.Group >
-          <Form.Input width = {6}
+          <Form.Input width = {4}
             placeholder='First Name'
             name='First Name'
             value={first_name}
             onChange={(e) => setFirstName(e.target.value)}
           />
-          <Form.Input
+          <Form.Input width = {4}
             placeholder='Last Name'
             name='Last Name'
             value={last_name}
             onChange={(e) => setLastName(e.target.value)}
           />
-            <Form.Input
-            placeholder='Id Number'
-            name='Id Number'
-            value={identification_number}
-            onChange={(e) => setIdentificationNumber(e.target.value)}
-          />
-            <Form.Input
-            placeholder='Resign'
-            name='Resign'
-            value={resign}
-            onChange={(e) => setResign(e.target.value)}
-          />
-            <Form.Input
+           
+       
+            <Form.Input width = {4}
             placeholder='Location'
             name='Location'
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          <Form.Button content='Submit' />
+          <Form.Button content='Submit' style={{ backgroundColor: 'blue', color: 'white' }} />
         </Form.Group>
       </Form>
     )

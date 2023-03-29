@@ -2,7 +2,7 @@ class DeputiesController < ApplicationController
     before_action :set_access_control_headers
     def index
         @deputies = Deputy.all.includes(:radios) 
-        render json: @deputies
+        render json: @deputies.order(last_name: :asc)
   
         
 

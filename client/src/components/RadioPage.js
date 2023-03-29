@@ -13,6 +13,7 @@ import EditDeputyForm from "./EditDeputyForm"
 import RadioListItems from "./DeputyListItem";
 import CourtsList from  "./CourtsList"
 import JailList from "./JailList";
+import { Search } from "semantic-ui-react";
 function RadioPage() {
 
 const [radios, setRadios] = useState([])
@@ -20,6 +21,7 @@ const [deputies, setDeputies] = useState([])
 const [rentedRadios, setRentedRadios] = useState({})
 const [courts, setCourts] = useState({})
 const [user, setUser] = useState(null)
+const [searchRadios, setSearch] = useState("")
 // authorizes users
 useEffect(()=> {
   fetch('/authorized')
@@ -66,8 +68,21 @@ function handleDeleteDeputy(deputytoDelete){
 const updateDeputy = deputies.filter((deputy) => deputy.id !== deputytoDelete.id)
  setDeputies(updateDeputy)
 }
-
+const updateSearchRadios = (searchInput) => {
+  setSearch(searchInput)
+}
+const filteredRadios = radios.filter(radio => {
+  if (radio === "") {
+    //if query is empty
+    return radio;
+  } else if (radio.serial_number.toLowerCase().includes(searchRadios.toLowerCase())) {
+    //returns filtered array
+    return radio;
+  
+  }
+});
 // 
+
 function updateRadioButton(updateRadioList){
   const filteredRentedRadios = rentedRadios.filter(radio => radio.id !== rentedRadios.id)
   
@@ -97,9 +112,11 @@ if(!user) return(
  <NavBar/>
   {/* path to radios */}
   <Routes>
+  
   <Route path="/" element={
       <RadioList 
-      radio = {radios} 
+      // radio = {radios} 
+      radio = {filteredRadios}
       updateRadioButton = {updateRadioButton}
      /> }/>
 
@@ -159,6 +176,14 @@ if(!user) return(
 <Route path = "/signup" element={
     <Signup
    />} />
+   <Route path = "/search" element={
+<Search
+  updateSearchRadios= {updateSearchRadios}
+    searchRadios = {searchRadios}
+filteredRadios = {filteredRadios}
+
+/>} />
+
 
      </Routes>
      </> 

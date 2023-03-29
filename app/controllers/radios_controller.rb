@@ -1,7 +1,7 @@
 class RadiosController < ApplicationController
     before_action :set_access_control_headers
 def index
-    render json: Radio.all, status: :ok
+    render json: Radio.all.order(serial_number: :asc), status: :ok
 end
 
 def show

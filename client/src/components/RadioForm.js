@@ -47,6 +47,7 @@ const handleSubmit = (e) => {
             name='Model'
             value={model}
             onChange={(e) => setModel(e.target.value)}
+            style = {{color: "blue"}}
           />
           <Form.Input
             placeholder='Serial Number'
@@ -54,7 +55,7 @@ const handleSubmit = (e) => {
             value={serial_number}
             onChange={(e) => setSerialNumber(e.target.value)}
           />
-          <Form.Button content='Submit' />
+            <Form.Button content='Submit' style={{ backgroundColor: 'blue', color: 'white' }} />
         </Form.Group>
       </Form>
     )
