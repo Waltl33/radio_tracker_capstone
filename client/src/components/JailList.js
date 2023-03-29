@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import JailListItems from "./JailListItems";
 import { Card } from "semantic-ui-react";
 
-function JailList({deputy}) {
+function JailList({}) {
 const [jails, setJails] = useState([])
     useEffect(()=> {
         fetch("http://127.0.0.1:3000/jails")
@@ -24,9 +24,6 @@ const [jails, setJails] = useState([])
 ))
 }
 </Card.Group>
-    // <Card.Group itemsPerRow={6}>
-    //   <h1>{deputyCards}</h1>
-    // </Card.Group>
   );
 }
 

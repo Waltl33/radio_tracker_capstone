@@ -4,11 +4,6 @@ import { Card } from "semantic-ui-react";
 
 function RadioList({radio, updateRadioButton}) {
 
-  // const cards = radio.map((radio => (
-  //   <RadioListItems
-  //     key = {radio.id}
-  //     radio = {radio}/>
-  // )))
   return (
     <Card.Group centered items={radio}>
     {radio.map(radio => 

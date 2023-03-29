@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import { Card, Button, Container, Divider} from "semantic-ui-react";
+import { Card, Button} from "semantic-ui-react";
 
-function RadioListItems({radio, updateRadioButton}) {
+function RadioListItems({radio}) {
   const [isRented, setRented] = useState(false);
 
   const handleClick = (e) => {
@@ -15,11 +15,6 @@ function RadioListItems({radio, updateRadioButton}) {
 
  
 
-// function radioClicked(radio){
-//   radio.id ===(deputyId)? console.log("rented"):console.log("not rented")
-// }
-
-// console.log(radio.deputies)
   return ( 
  
     

@@ -34,9 +34,9 @@ function handleSubmit(e) {
         }
       
   
-        console.log(errors)
      
-  if(errors) <h2>{errors}</h2>
+     
+
   
 
 
