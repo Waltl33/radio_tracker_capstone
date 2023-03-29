@@ -20,9 +20,7 @@ function DeputyList({deputy, handleDeleteDeputy,updateDeputy }) {
 ))
 }
 </Card.Group>
-    // <Card.Group itemsPerRow={6}>
-    //   <h1>{deputyCards}</h1>
-    // </Card.Group>
+  
   );
 }
 

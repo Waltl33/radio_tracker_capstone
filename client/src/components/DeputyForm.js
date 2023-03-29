@@ -45,8 +45,7 @@ const handleSubmit = (e) => {
       });
   }
      
-        // .then(resp => resp.json())
-        // .then(deputy => handleNewDeputy(deputy))
+    
     
     
 
@@ -69,7 +68,7 @@ const handleSubmit = (e) => {
           />
            
        
-            <Form.Input width = {4}
+         <Form.Input width = {4}
             placeholder='Location'
             name='Location'
             value={location}

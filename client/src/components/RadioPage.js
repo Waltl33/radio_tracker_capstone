@@ -129,22 +129,18 @@ if(!user) return(
       <DeputyList
       deputy = {deputies}
       handleDeleteDeputy = {handleDeleteDeputy}
-      updateDeputy = {updateDeputy}
-      radios = {radios}
       />}/>
 
     {/* path to see all radios in the courts location */}
     <Route path= "/courts" element ={
-      <CourtsList
-      deputy = {deputies}
-      radios = {radios}
+      <CourtsList  
       />}/>
 
     {/* path to see all radios in teh jails location */}
     <Route path= "/jails" element ={
       <JailList
       />}/>
-      
+
     {/* path to login */}
     <Route path = "/login" element={
       <Login

@@ -2,12 +2,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Button, Radio } from "semantic-ui-react";
-// import { radioService } from "../radioService";
+
 
 function DeputyListItems({deputy, handleDeleteDeputy,updateDeputy, radios}) {
 const navigate = useNavigate()
 const {id, first_name, last_name, identification_number, resign, location} = deputy
-
+// deletes a Deputy
   function handleDelete(){
 
     fetch(`/deputies/${id}`,{
@@ -23,7 +23,7 @@ const {id, first_name, last_name, identification_number, resign, location} = dep
       handleDeleteDeputy(deputy);
     });
 }
-
+// linked to handle edit button to navigate to the edit deputy form
 const handleEdit = (e) => {
   e.preventDefault()
  console.log(id)

@@ -1,13 +1,13 @@
 // import { ErrorResponse } from "@remix-run/router";
 import React from "react";
 
-import { Card, Button, Radio } from "semantic-ui-react";
-// import { radioService } from "../radioService";
+import { Card} from "semantic-ui-react";
+
 
 function CourtsListItems({deputy}) {
 
 const {id, first_name, last_name, identification_number, resign, location} = deputy
-
+// maps through array to pull the radio serial number to be used in the Courts List
 const serialNumber =  deputy.radios.map(radio =>(radio.serial_number))
   return (
 

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import CourtsListItem from "./CourtsListItems";
 import { Card } from "semantic-ui-react";
 
-function CourtsList({deputy}) {
+function CourtsList({}) {
 const [courts, setCourts] = useState([])
     useEffect(()=> {
         fetch("http://127.0.0.1:3000/courts")
@@ -24,9 +24,6 @@ const [courts, setCourts] = useState([])
 ))
 }
 </Card.Group>
-    // <Card.Group itemsPerRow={6}>
-    //   <h1>{deputyCards}</h1>
-    // </Card.Group>
   );
 }
 

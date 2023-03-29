@@ -11,14 +11,7 @@ function EditDeputyForm({updateDeputy, deputy}){
     const [location, setLocation] = useState()
     const [errors, setErrors] = useState([])
   let navigate = useNavigate()
-//   handleChange = (e, { name, value }) => this.setState({ [name]: value })
-// const[formData, setFormData] = useState({
-//     first_name: '',
-//     last_name: '',
-//     identification_number: '',
-//     resign: '',
-//     location: ''
-// })
+
 
 let user = {
     first_name: deputy.first_name,
@@ -80,32 +73,7 @@ useEffect(() => {
       <Form onSubmit={(e) => {{handleSubmit(e)}}}>
         <Form.Group>
    
-          {/* <Form.Input
-            placeholder='First Name'
-            name='First Name'
-            value={first_name}
-            onChange={(e) => setFirstName(e.target.value)}
-           
-          />
-          <Form.Input
-            placeholder='Last Name'
-            name='Last Name'
-            value={last_name}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-            <Form.Input
-            placeholder='Id Number'
-            name='Id Number'
-            value={identification_number}
-            onChange={(e) => setIdentificationNumber(e.target.value)}
-          />
-            <Form.Input
-            placeholder='Resign'
-            name='Resign'
-            value={resign}
-            onChange={(e) => setResign(e.target.value)}
-          /> */}
-            <Form.Input
+         <Form.Input
             placeholder='Location'
             name='Location'
             value={location}
