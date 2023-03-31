@@ -47,6 +47,11 @@ export default function NavBar(){
       <NavLink to="/jails">Jail</NavLink>
     </li>
     
+    <li>
+      <NavLink to="/assign_radio">Rent Radios</NavLink>
+    </li>
+
+
     <Button variant="secondary" onClick={handleLogout}>Logout</Button>
   </nav>
 

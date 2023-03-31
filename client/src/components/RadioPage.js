@@ -12,6 +12,7 @@ import EditDeputyForm from "./EditDeputyForm"
 import RadioListItems from "./DeputyListItem";
 import CourtsList from  "./CourtsList"
 import JailList from "./JailList";
+import AssignRadioForm from "./AssignRadioForm";
 
 function RadioPage() {
 
@@ -139,6 +140,10 @@ if(!user) return(
     {/* path to see all radios in teh jails location */}
     <Route path= "/jails" element ={
       <JailList
+      />}/>
+
+    <Route path= "/assign_radio" element ={
+      <AssignRadioForm
       />}/>
 
     {/* path to login */}
