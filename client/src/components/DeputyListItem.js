@@ -52,7 +52,7 @@ const handleEdit = (e) => {
 
     <Card color = 'black'>
       <div>   
-     <div className="Id" style={{color: 'black'}}><strong>ID:</strong><strong> <span style={{color: 'blue'}}>{id}</span></strong></div>
+     <div className="Id" style={{color: 'black'}}><strong>Deputy Issue ID:</strong><strong> <span style={{color: 'blue'}}>{id}</span></strong></div>
     <div className="First Name" style={{color: 'black'}}><strong>First Name:</strong><strong> <span style={{color: 'blue'}}>{first_name}</span></strong></div>
     
     <div className="Last Name" style={{color: 'black'}}><strong>Last Name:</strong><strong> <span style={{color: 'blue'}}>{last_name}</span></strong></div>
@@ -61,8 +61,8 @@ const handleEdit = (e) => {
       
       
        
-      <Button compact size = "mini" color="blue" onClick={handleDelete}>Delete Deputy</Button>
-      <Button compact size = "mini"  color = "black" onClick={handleEdit}>Edit Location</Button>
+      <Button compact size = "mini" color="blue" onClick={handleDelete}>Return Radio</Button>
+      <Button compact size = "mini"  color = "black" onClick={handleEdit}>Transfer Deputy</Button>
       </div>
     </Card>
   );

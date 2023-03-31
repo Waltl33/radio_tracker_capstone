@@ -24,7 +24,7 @@ function RadioListItems({radio}) {
      
     <Card color = "black">
       <div>  
-      <div className="ID" style={{color: 'black'}}><strong>ID:</strong><strong> <span style={{color: 'blue'}}>{radio.id}</span></strong></div> 
+      <div className="ID" style={{color: 'black'}}><strong>Radio Issue ID:</strong><strong> <span style={{color: 'blue'}}>{radio.id}</span></strong></div> 
       <div className="assigned"style={{color: 'black'}}><strong> Assigned to:</strong><strong> <span style={{color: 'blue'}}> {radio.deputies.length === 0 ? "" : `${deputyFirstName} ${deputyLastName}`}</span></strong></div>  
       <div className="Serial Number" style={{color: 'black'}}><strong>Serial Number:</strong><strong> <span style={{color: 'red'}}>{radio.serial_number}</span></strong></div> 
     
