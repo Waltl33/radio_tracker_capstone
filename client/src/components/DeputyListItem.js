@@ -61,8 +61,8 @@ const handleEdit = (e) => {
       
       
        
-      <Button compact size = "mini" color="blue" onClick={handleDelete}>Return Radio</Button>
-      <Button compact size = "mini"  color = "black" onClick={handleEdit}>Transfer Deputy</Button>
+      <Button compact size = "mini" color="blue" onClick={handleDelete}>Delete Deputy</Button>
+      <Button compact size = "mini"  color = "black" onClick={handleEdit}>Edit Location</Button>
       </div>
     </Card>
   );

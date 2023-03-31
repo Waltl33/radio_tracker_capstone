@@ -79,7 +79,7 @@ useEffect(() => {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          <Form.Button content='Submit' style={{ backgroundColor: 'blue', color: 'white' }}/>
+          <Form.Button content='Submit' />
         </Form.Group>
       </Form>
     )
