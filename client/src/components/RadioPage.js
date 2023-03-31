@@ -142,7 +142,7 @@ if(!user) return(
       <JailList
       />}/>
 
-    <Route path= "/assign_radio" element ={
+    <Route path= "/assign_radio/:id" element ={
       <AssignRadioForm
       />}/>
 

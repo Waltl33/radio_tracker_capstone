@@ -48,7 +48,7 @@ export default function NavBar(){
     </li>
     
     <li>
-      <NavLink to="/assign_radio">Rent Radios</NavLink>
+      <NavLink to="/assign_radio/:id">Rent Radios</NavLink>
     </li>
 
 
