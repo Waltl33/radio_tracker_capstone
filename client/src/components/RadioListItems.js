@@ -6,6 +6,9 @@ function RadioListItems({radio}) {
   const {id, model} = radio
   const navigate = useNavigate()
 
+  const radioButton = radio.deputies.length !== 0 ? "Rented" : "Not Rented"
+  const buttonColor = radio.deputies.length !== 0 ? "blue" : "black"
+
   const handleClick = (e) => {
       console.log(radio.deputies.length)
   
@@ -51,8 +54,8 @@ function RadioListItems({radio}) {
       <div className="Serial Number" style={{color: 'black'}}><strong>Serial Number:</strong><strong> <span style={{color: 'red'}}>{radio.serial_number}</span></strong></div> 
     
       <span className="model number"> Model Number: {radio.model} </span>
-    <Button compact size="tiny" color={radio.deputies.length !== 0 ? "blue" : "black"} onClick={handleRent}>
-    {radio.deputies.length !== 0 ? "Rented" : "Not Rented"}
+    <Button compact size="tiny" color={buttonColor} onClick={handleRent}>
+    {radioButton}
     </Button>
       </div>
     </Card>
